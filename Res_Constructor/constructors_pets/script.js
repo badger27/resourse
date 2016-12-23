@@ -10,23 +10,15 @@ console.log(cat);
 
 
 
-
-
 var dog = {
-    
     name:{first : 'fluffy', last: 'bear'},
-  
-  
 };
 
-Object.defineProperty(dog, 'fullname ',
-    
-    {
-    get: function() {
+Object.defineProperty(dog, 'fullname ', {get: function() {
       return  this.name.first + '' + this.name.last
                         
     }
  });
    
    
- console.log(dog.fullname);
+ console.log("test"  + dog.fullname);
