@@ -1,6 +1,7 @@
-(function() {
-    "use strict";
+(function(){
+"use strict";
 
-    angular.module("psMovies", []);
+
+ angular.module("psMovies", []);
 
 }());

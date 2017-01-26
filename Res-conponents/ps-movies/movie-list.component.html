@@ -1,29 +1,52 @@
-<div>
-  <table class="table">
-      <tr>
-          <th>Title</th>
-          <th>Length</th>
-          <th>Rating</th>
-          <th></th>
-      </tr>
-      <tr ng-repeat="movie in model.movies">
-          <td>{{movie.title}}</td>
-          <td>{{movie.length}}</td>
-          <td>
-              <movie-rating value="movie.rating">
-                <span class="glyphicon glyphicon-star"></span>    
-              </movie-rating>
-          </td>
-          <td>
-              <div class="btn-group">
-                  <button class="btn btn-default" ng-click="model.upRating(movie)">
-                      <span class="glyphicon glyphicon-plus"></span>
-                  </button>
-                  <button class="btn btn-default" ng-click="model.downRating(movie)">
-                      <span class="glyphicon glyphicon-minus"></span>
-                  </button>
-              </div>
-          </td>
-      </tr>
-  </table>
+
+
+
+<div class="table">
+
+    <table>
+
+        <tr>
+
+            <th>Score </th>
+            <th>name</th>
+            <th>Rating</th>
+            <th>Action</th>
+
+             <th></th>
+        </tr>
+
+        <tr ng-repeat="player in model.players">
+
+            <td>{{player.wins}}/{{player.lost}}</td>
+            <td>{{player.name}}</td>
+            <!--<td>{{player.length}}</td>-->
+
+            <td>
+
+                <movie-rating value="player.rating">
+
+                <span class="glyphicon glyphicon-star"></span>
+
+                </movie-rating>
+
+            </td>
+
+            <td><div class="btn-group">
+
+                <button class="btn btn-default"
+                        ng-click="model.upRating(player)">
+                    <span class="glyhicon glyphicon-plus"></span>
+                </button>
+
+                <button class="btn btn-default"
+                        ng-click="model.downRating(player)">
+                    <span class="glyhicon glyphicon-minus"></span>
+                </button>
+            </div></td>
+
+
+        </tr>
+
+
+    </table>
 </div>

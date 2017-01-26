@@ -1,43 +1,53 @@
-(function() {
-    "use strict";
+(function(){
+"use strict";
 
-    var module = angular.module("psMovies");
+var module = angular.module("psMovies");
 
-    function fetchMovies($http) {
-        return $http.get("/movies.json")
-                    .then(function(response) {
-                        return response.data;
-                    });
+
+    function  fetchMovies($http) {
+        return $http.get("player.json")
+            .then(function (response) {
+            return response.data;
+
+        });
+
     }
 
-    function controller($http) {
-
+    function  controller ($http) {
         var model = this;
-        model.movies = [];
 
-        model.$onInit = function() {
-            fetchMovies($http).then(function(movies) {
-                model.movies = movies;    
-            });
-        };
-        
-        model.upRating = function(movie) {
-            if(movie.rating < 5) {
-                movie.rating += 1;
-            }
-        };
-        
-        model.downRating = function(movie) {
-            if(movie.rating > 1) {
-                movie.rating -= 1;
-            }
-        };
-    }
 
-    module.component("movieList", {
-        templateUrl: "/ps-movies/movie-list.component.html",
-        controllerAs: "model",
-        controller: ["$http", controller]
+        model.$onInit = function(){
+
+        fetchMovies($http).then(function(players) {
+
+            console.log("players" ,players);
+            model.players = players;
+        });
+       }
+
+       model.upRating = function (player) {
+
+            if(player.rating < 5 ) {
+                player.rating += 1 ;
+            }
+        }
+
+        model.downRating = function (player) {
+            if(player.rating > 1 ) {
+                player.rating -= 1 ;
+            }
+        }
+      }
+
+module.component('playerList',{
+
+    templateUrl : "ps-movies/movie-list.component.html ",
+    controllerAs: "model",
+    controller: ["$http" , controller]
+
     });
 
-} ());
+
+
+}());

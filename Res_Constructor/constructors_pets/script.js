@@ -19,7 +19,6 @@ var hen ={
     name: {first :"fluffy", last:"freir"}
 };
 
-
 Object.defineProperty(hen, 'fullname',{
     get:function () {
     return this.name.first + ' ' + this.name.last
@@ -35,12 +34,7 @@ Object.defineProperty(hen, 'fullname',{
 
 // Object.definePropertys(cat, 'name',{enumerable:true});
 
-for( var propertyname in cat){
-
-}
-
-
-
+for( var propertyname in cat){}
 var dog = {
     name:{first : 'fluffy', last: 'bear'},
 };
@@ -56,10 +50,6 @@ Object.defineProperty(dog, 'fullname ', {get: function() {
 
 
 //prototype
-
-
-
-
 function Animal (voice) {
 
     this.voice = voice || 'grunt';
@@ -97,8 +87,5 @@ console.log("fluffy.__proto__:" + fluffy.__proto__.age);
 console.log("wolf.prototype" , wolf.prototype);
 console.log("ben_proto_" ,  ben.__proto__);
 console.log(wolf.prototype === ben.__proto__);
-
-
-
 
  //getter and setters
